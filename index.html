@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barry Shi | AI Agent & 智慧製造軟體工程師</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Barry Shi 擁有 3 年多的軟體工程師經歷。包含近 2 年物聯網智慧工廠軟體 RD 經驗，以及 1 年 6 個月 SIEM 與 MES 系統維運與開發優化背景。具備跨國英文溝通能力，並持續積極學習與建置 Agents / Skills 最新 AI 技術。">
+    <meta name="keywords" content="Barry Shi, 軟體工程師, 智慧工廠, AI Agent, SIEM, MES, Docker, K8s, TypeScript, Python, Azure, AWS">
+    <meta name="author" content="Barry Shi">
+    <link rel="canonical" href="https://barry-shi.vercel.app/">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Barry Shi | AI Agent & 智慧製造軟體工程師">
+    <meta property="og:description" content="Barry Shi - 3年多軟體工程師經歷，專注智慧製造、AI 自動化與雲端資安。">
+    <meta property="og:url" content="https://barry-shi.vercel.app/">
+
+    <!-- GEO / AEO Schema.org JSON-LD for AI Search Engines (ChatGPT, Claude, Perplexity) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Barry Shi",
+        "jobTitle": "Software Engineer",
+        "description": "Barry Shi 擁有 3 年多軟體工程師經歷，涵蓋物聯網智慧工廠軟體 RD、SIEM/MES 系統維運優化與 AI Agent 技術應用。",
+        "knowsAbout": ["TypeScript", "Node.js", "React", "Docker", "Kubernetes", "Python", "PHP", "Azure", "AWS", "SIEM", "MES", "AI Agents", "Claude Code", "Gemini AI Agent"],
+        "sameAs": [
+          "https://barry-shi.vercel.app/",
+          "https://github.com/barrystone",
+          "https://www.linkedin.com/in/barry-shi/",
+          "https://barrystone.github.io/"
+        ]
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f4f5',
+                            100: '#e4e4e7',
+                            800: '#27272a',
+                            900: '#18181b',
+                            950: '#09090b',
+                            accent: '#6366f1' // Pure Tech Indigo
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 音波跳動動畫 */
+        .equalizer-bar {
+            animation: bounce 1.2s infinite ease-in-out alternate;
+        }
+        .equalizer-bar:nth-child(1) { animation-delay: 0.1s; }
+        .equalizer-bar:nth-child(2) { animation-delay: 0.3s; }
+        .equalizer-bar:nth-child(3) { animation-delay: 0.5s; }
+        
+        @keyframes bounce {
+            0% { height: 4px; }
+            100% { height: 16px; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+
+    <!-- 音樂播放器 (Audio Element) -->
+    <audio id="bg-audio" loop preload="auto">
+        <source src="https://img.ai365.fans/artworks/3bb35909-8b1c-44d3-8989-a65bfe17a7ae/r4ipz02hhd.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 導覽列 Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-40 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/60 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- 品牌 Name Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <span class="font-bold text-lg sm:text-xl tracking-tight text-zinc-900 dark:text-white font-mono">
+                        Barry Shi<span class="text-indigo-500">.dev</span>
+                    </span>
+                    <span class="hidden sm:inline-block px-2.5 py-0.5 text-xs font-medium rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/50">
+                        3+ Years Exp
+                    </span>
+                </div>
+
+                <!-- 電腦版選單與工具按鈕 -->
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                        <a href="#about" class="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-white transition-colors">關於我</a>
+                        <a href="#pi-architecture" class="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-white transition-colors">智慧工廠 & Agent</a>
+                        <a href="#security" class="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-white transition-colors">資安與雲端</a>
+                        <a href="#global" class="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-white transition-colors">英文溝通與協作</a>
+                        <a href="#contact" class="text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-white transition-colors">與我聯絡</a>
+                    </div>
+
+                    <!-- 主題切換 & 音樂開關按鈕區 -->
+                    <div class="flex items-center gap-2 border-l border-zinc-200 dark:border-zinc-800 pl-4">
+                        <!-- 深色/淺色模式切換 -->
+                        <button id="theme-toggle" class="p-2.5 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                            <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+                        </button>
+
+                        <!-- 音樂控制按鈕 -->
+                        <button id="music-btn" onclick="toggleAudio()" class="p-2.5 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors flex items-center justify-center gap-1.5" title="背景音樂開關">
+                            <i class="fa-solid fa-music text-base" id="music-icon"></i>
+                            <div id="equalizer" class="hidden items-end gap-0.5 h-4 w-3">
+                                <span class="equalizer-bar w-0.5 bg-indigo-500 rounded-full"></span>
+                                <span class="equalizer-bar w-0.5 bg-indigo-500 rounded-full"></span>
+                                <span class="equalizer-bar w-0.5 bg-indigo-500 rounded-full"></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- 手機選單按鈕 -->
+                    <button id="mobile-menu-btn" class="md:hidden text-zinc-600 dark:text-zinc-400 p-2" aria-label="Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手機版選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 px-6 py-4 space-y-3 font-medium">
+            <a href="#about" class="mobile-link block text-zinc-700 dark:text-zinc-300 hover:text-indigo-500 py-2">關於我</a>
+            <a href="#pi-architecture" class="mobile-link block text-zinc-700 dark:text-zinc-300 hover:text-indigo-500 py-2">智慧工廠 & Agent</a>
+            <a href="#security" class="mobile-link block text-zinc-700 dark:text-zinc-300 hover:text-indigo-500 py-2">資安與雲端</a>
+            <a href="#global" class="mobile-link block text-zinc-700 dark:text-zinc-300 hover:text-indigo-500 py-2">英文溝通與協作</a>
+            <a href="#contact" class="mobile-link block text-center py-3 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-bold mt-2">與我聯絡</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="about" class="pt-32 pb-20 md:pt-44 md:pb-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+            
+            <!-- 個人照區域 -->
+            <div class="md:col-span-5 flex justify-center md:justify-start">
+                <div class="relative group">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 opacity-30 dark:opacity-40 blur transition group-hover:opacity-60"></div>
+                    <img src="https://wakatime.com/photo/682f598c-7df0-4ebf-be44-73def4a794ca?s=420&cache=false&time=1793518540.0624146" 
+                         alt="Barry Shi Headshot" 
+                         class="relative w-48 h-48 sm:w-64 sm:h-64 rounded-2xl object-cover shadow-2xl border border-zinc-200 dark:border-zinc-800"
+                         onerror="this.onerror=null; this.src='https://placehold.co/300x300/18181b/ffffff?text=Barry+Shi';">
+                </div>
+            </div>
+
+            <!-- 文字個人介紹 -->
+            <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Barry Shi • Software Engineer (3+ Years Exp)
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight leading-tight">
+                    Barry Shi<br>
+                    <span class="text-indigo-600 dark:text-indigo-400">專注智慧製造、AI 自動化與雲端資安</span>
+                </h1>
+
+                <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
+                    擁有 3 年多的軟體工程師經歷。核心涵蓋近 2 年的物聯網智慧工廠軟體 RD 經驗，以及 1 年 6 個月的 SIEM 與 MES 系統維運與開發優化背景。能運用英文與系統使用者及客戶溝通解決問題，且目前仍持續積極學習並建置 Agents / Skills 等最新 AI 技術實務。
+                </p>
+
+                <!-- 社群與網站連結按鈕 -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
+                    <a href="https://barry-shi.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors shadow-sm">
+                        <i class="fa-solid fa-file-user text-base"></i>
+                        個人履歷網站
+                    </a>
+                    <a href="https://github.com/barrystone" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm">
+                        <i class="fa-brands fa-github text-base"></i>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/barry-shi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0a66c2] text-white text-sm font-medium hover:bg-[#084e96] transition-colors shadow-sm">
+                        <i class="fa-brands fa-linkedin text-base"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://barrystone.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-800 text-sm font-medium hover:border-indigo-500 dark:hover:border-indigo-500 transition-colors">
+                        <i class="fa-solid fa-globe text-indigo-500"></i>
+                        初版個人網站 (舊有個人專案技能簡介)
+                    </a>
+                </div>
+
+                <!-- 技能標籤 -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+                    <span class="px-3 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">TypeScript / Node.js / React</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">Docker / K8s</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">Python / PHP</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">Azure / AWS</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800">Claude Code / Gemini AI Agent / AI Skills (Learning)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心定位與經驗內容區域 Main Experience Grid -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-24">
+        
+        <!-- 1. 智慧工廠 x AI Agent -->
+        <section id="pi-architecture" class="scroll-mt-28">
+            <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7 space-y-4">
+                        <div class="font-mono text-xs text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">[ 實務定位 01 ]</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">
+                            結合智慧工廠與 AI Agent，<br>
+                            <span class="text-indigo-600 dark:text-indigo-400">定位高薪 π 型人才。</span>
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+                            具備近 2 年物聯網智慧工廠軟體 RD 經驗，熟悉 <strong class="font-semibold text-zinc-900 dark:text-white">TypeScript、Node.js、React</strong> 開發與 <strong class="font-semibold text-zinc-900 dark:text-white">Docker、K8s</strong> 容器化環境。善用 AI 規格驅動開發，目前仍持續積極學習與建立 <strong class="font-semibold text-zinc-900 dark:text-white">Agents / Skills</strong> 等最新 AI 自動化技術流程（如 Claude Code/Skills、Power Automate、Gemini AI Agent），努力充實跨領域實戰力。
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">智慧工廠 RD 經驗</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">近 2 年 OT 物聯網軟體研發經驗，熟悉 TS, Node.js, React, Docker, K8s。</div>
+                            </div>
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">AI 規格與持續學習</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">實作 AI 規格驅動開發，並積極學習建置 AI Agents 與 Custom Skills 流程。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右側示意面板 -->
+                    <div class="md:col-span-5 font-mono text-xs bg-zinc-100 dark:bg-zinc-950 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 space-y-3">
+                        <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-2">
+                            <span>STACK_MANIFEST</span>
+                            <span class="text-emerald-500">● ACTIVE</span>
+                        </div>
+                        <div>> Developer: Barry Shi</div>
+                        <div>> Frontend: React, TypeScript</div>
+                        <div>> Backend & Runtime: Node.js, Docker, K8s</div>
+                        <div>> AI Workflows: Claude Code, Gemini Agent</div>
+                        <div class="text-indigo-600 dark:text-indigo-400 font-semibold">> Continuous Learning: AI Agents & Skills</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 資安與雲端經驗 -->
+        <section id="security" class="scroll-mt-28">
+            <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5 order-2 md:order-1 font-mono text-xs bg-zinc-100 dark:bg-zinc-950 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 space-y-3">
+                        <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-2">
+                            <span>SEC_CLOUD_INFRA</span>
+                            <span class="text-blue-500">● SECURED</span>
+                        </div>
+                        <div>> Engineer: Barry Shi</div>
+                        <div>> SIEM Integration & Monitoring</div>
+                        <div>> MES System Optimization (Python / PHP)</div>
+                        <div>> Cloud Platforms: Azure, AWS</div>
+                        <div class="text-indigo-600 dark:text-indigo-400 font-semibold">> Focus: Reliable & Secure System Design</div>
+                    </div>
+                    
+                    <div class="md:col-span-7 order-1 md:order-2 space-y-4">
+                        <div class="font-mono text-xs text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">[ 實務定位 02 ]</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">
+                            發揮資安與雲端經驗，<br>
+                            <span class="text-indigo-600 dark:text-indigo-400">卡位可信任 AI 資安缺口。</span>
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+                            擁有 1 年 6 個月的 <strong class="font-semibold text-zinc-900 dark:text-white">SIEM 與 MES 系統維運與開發優化</strong>經歷，熟練掌握 <strong class="font-semibold text-zinc-900 dark:text-white">Python、PHP</strong> 以及 <strong class="font-semibold text-zinc-900 dark:text-white">Azure、AWS</strong> 雲端平台基礎設施。理解資訊安全與系統穩定度對企業的重要性，致力於將經驗延伸至未來可信任 AI（Trustworthy AI）的資安與穩定架構維護。
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">SIEM & MES 維運優化</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">1.5 年系統開發、監控與維運優化實務（Python, PHP）。</div>
+                            </div>
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">雲端與資安對接</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">運用 Azure / AWS 架構經驗，為系統安全性與可信任度打下紮實基礎。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 英文溝通與協作 -->
+        <section id="global" class="scroll-mt-28">
+            <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-7 space-y-4">
+                        <div class="font-mono text-xs text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">[ 實務定位 03 ]</div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">
+                            善用團隊英文溝通經驗與作品集，<br>
+                            <span class="text-indigo-600 dark:text-indigo-400">爭取跨國 AI 職務。</span>
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm sm:text-base">
+                            在過去經驗中能直接使用<strong class="font-semibold text-zinc-900 dark:text-white">英文與系統使用者及跨國客戶溝通</strong>、精準釐清需求並解決問題。結合手刻作品集與持續累積的實戰專案經驗，展現良好的跨國團隊協作能力。
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">英文溝通與客服支援</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">能直接與海外客戶與使用者英語應答、對接系統技術細節。</div>
+                            </div>
+                            <div class="p-3.5 rounded-lg bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800">
+                                <div class="font-semibold text-zinc-800 dark:text-zinc-200 text-sm mb-1">跨國協作與作品呈現</div>
+                                <div class="text-xs text-zinc-500 dark:text-zinc-400">維護個人 Github 作品集與專案成果，能迅速適應跨國遠端與混合協作模式。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-5 font-mono text-xs bg-zinc-100 dark:bg-zinc-950 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 space-y-3">
+                        <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-2">
+                            <span>COMMUNICATION_LOG</span>
+                            <span class="text-purple-500">● READY</span>
+                        </div>
+                        <div>> Professional: Barry Shi</div>
+                        <div>> English Proficiency: Professional Working</div>
+                        <div>> Client Communication: Direct Support</div>
+                        <div>> Github Projects: Active</div>
+                        <div class="text-indigo-600 dark:text-indigo-400 font-semibold">> Target: Global Tech Roles</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 與我聯絡 Contact Section -->
+        <section id="contact" class="scroll-mt-28">
+            <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div class="text-center space-y-3">
+                        <div class="font-mono text-xs text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">[ CONTACT BARRY ]</div>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-zinc-900 dark:text-white">與 Barry 聯繫交流</h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                            無論是職缺探討、技術交流或專案合作，歡迎留下您的訊息，表單資料將直接透過自動化寫入紀錄並通知我。
+                        </p>
+                    </div>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1.5">您的姓名 / Name</label>
+                                <input type="text" id="name" required placeholder="例如：王小明" class="w-full px-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 text-sm transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1.5">電子郵件 / Email</label>
+                                <input type="email" id="email" required placeholder="your.name@example.com" class="w-full px-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 text-sm transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1.5">訊息主旨 / Subject</label>
+                            <input type="text" id="subject" required placeholder="技術交流 / 職缺邀請 / 合作洽詢" class="w-full px-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 text-sm transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-mono text-zinc-600 dark:text-zinc-400 mb-1.5">訊息內容 / Message</label>
+                            <textarea id="message" rows="4" required placeholder="請留下您想討論的內容..." class="w-full px-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-500 text-sm transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm transition-colors flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            發送訊息
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 成功提示彈窗 (Toast) -->
+    <div id="toast-message" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 border border-zinc-800 dark:border-zinc-200 text-sm font-medium">
+        <i class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600 text-lg"></i>
+        <span>感謝您的訊息！資料已成功寫入，Barry Shi 將盡快與您聯繫。</span>
+    </div>
+
+    <!-- 頁尾 Footer -->
+    <footer class="border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 transition-colors duration-300 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left">
+                <div class="font-mono text-sm font-bold text-zinc-900 dark:text-white">Barry Shi<span class="text-indigo-500">.dev</span></div>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">3 Years + Software Engineering Experience</p>
+            </div>
+            
+            <!-- 社群連結鏈結區 -->
+            <div class="flex items-center gap-4 text-zinc-600 dark:text-zinc-400">
+                <a href="https://barry-shi.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-white transition-colors" title="個人履歷網站">
+                    <i class="fa-solid fa-file-user text-xl"></i>
+                </a>
+                <a href="https://github.com/barrystone" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-white transition-colors" title="GitHub">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/barry-shi/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-white transition-colors" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://barrystone.github.io/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-white transition-colors" title="初版個人網站 (舊有個人專案技能簡介)">
+                    <i class="fa-solid fa-globe text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 腳本 -->
+    <script>
+        // 1. 深色 / 淺色主題切換邏輯
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // 2. 音樂播放邏輯
+        const audio = document.getElementById('bg-audio');
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+        const equalizer = document.getElementById('equalizer');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove('hidden');
+                equalizer.classList.add('hidden');
+                equalizer.classList.remove('flex');
+            } else {
+                audio.play().then(() => {
+                    musicIcon.classList.add('hidden');
+                    equalizer.classList.remove('hidden');
+                    equalizer.classList.add('flex');
+                }).catch(err => {
+                    console.log("Audio play deferred or blocked: ", err);
+                });
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // 3. 手機版選單開關邏輯
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 4. 表單提交至 Google Apps Script 試算表邏輯
+        const contactForm = document.getElementById('contact-form');
+        const toastMessage = document.getElementById('toast-message');
+
+        // 正式填入您設定好的 Google Apps Script 部署 URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxuLI7RSn5y4Vi_UWPwimosPEZXZZEFaFmXV7Y5VIDu-vquEqIxTMUAttDPwpu6zstN/exec';
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+                
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 傳送中...';
+                }
+
+                const formData = new FormData();
+                formData.append('name', document.getElementById('name').value);
+                formData.append('email', document.getElementById('email').value);
+                formData.append('subject', document.getElementById('subject').value);
+                formData.append('message', document.getElementById('message').value);
+                formData.append('timestamp', new Date().toLocaleString('zh-TW'));
+
+                try {
+                    // 使用 no-cors 模式發送至 Google Apps Script 避開跨網域問題
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+                    
+                    // 顯示成功提示彈窗
+                    toastMessage.classList.remove('translate-y-24', 'opacity-0');
+                    toastMessage.classList.add('translate-y-0', 'opacity-100');
+                    
+                    // 清空表單
+                    contactForm.reset();
+
+                    // 3.5 秒後自動隱藏
+                    setTimeout(() => {
+                        toastMessage.classList.remove('translate-y-0', 'opacity-100');
+                        toastMessage.classList.add('translate-y-24', 'opacity-0');
+                    }, 3500);
+
+                } catch (error) {
+                    console.error('表單發送錯誤:', error);
+                } finally {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
